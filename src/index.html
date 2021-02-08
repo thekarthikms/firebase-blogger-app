@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Blog App</title>
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app">
+        <div class="main">
+            <div class="container">
+                <div class="title-container">
+                    <h1>Firebase Blog App</h1>
+                </div>
+                <div class="form-container">
+                    <form>
+                        <input type="text" class="input-content" placeholder="Name">
+                        <textarea name="" id="" cols="30" rows="10" class="input-content" placeholder="What's on your mind...."></textarea>
+                        <div class="icons">
+                            <div class="icon" id="clearfield"><i class="fa fa-times"></i></div>
+                            <div class="icon" id="uploadfield"><i class="fa fa-check"></i></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="divder"></div>
+                <div class="blog-container">
+                    <div class="loader"></div>
+                    <div class="clear-previous">
+                        <button id="clear-prev-blogs">Clear Previous Blogs</button>
+                    </div>
+                    <div class="previous-content">
+                        
+                        <div class="post">
+                            <h2>This is first post</h2>
+                            <p>Karthik M S <span class="dim">- 02:04:1997 00:00:00 IST </span> </p>
+                        </div>
+                        <div class="post">
+                            <h2>This is first post</h2>
+                            <p>Karthik M S <span class="dim">- 02:04:1997 00:00:00 IST </span> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="previous-blogs">
+                <p>Previous Blogs</p>
+            </div>
+        </div>
+        
+    </div>
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
