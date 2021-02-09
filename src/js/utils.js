@@ -10,9 +10,9 @@ const showPrevBlogs = (data,prevContent ) => {
     let h2 = document.createElement('h2')
     let p = document.createElement('p')
     let p2 = document.createElement('p')
-    h2.innerHTML = `${data.data().blog}`
-    p.innerHTML = `Blog by : ${data.data().name}`
-    p2.innerHTML = `Time : ${data.data().time}`
+    h2.innerHTML = `${data.blog}`
+    p.innerHTML = `Blog by : ${data.name}`
+    p2.innerHTML = `Time : ${data.time}`
     post.append(h2)
     post.append(p)
     post.append(p2)

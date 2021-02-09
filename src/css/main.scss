@@ -170,8 +170,8 @@ body {
                     width: 70%;
                     padding: 10px;
                     display: flex;
-                    align-items: flex-end;
-                    justify-content: flex-end;
+                    align-items: center;
+                    justify-content: center;
                     // display: none;
                     #clear-prev-blogs{
                         border: none;
@@ -229,14 +229,20 @@ body {
             background-color: rgb(252, 193, 66);
             border-radius: 10px;
             height: 50px;
-            width: 50px;
+            width: max-content;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             font-size: 3rem;
             cursor: pointer;
-
+            .icon{
+                display: none;
+            }
+            .preblog{
+                display: block;
+                font-size: 1rem;
+            }
         }
 
         #previous-blogs:hover {
@@ -277,7 +283,20 @@ body {
             .container {
                 width: 90%;
             }
+            #previous-blogs{
+                height: 60px;
+                width: 60px;
+                font-size: 2rem;
+                .icon{
+                    display: block;
+                    
+                }
+                .preblog{
+                    display: none;
+                }
+            }
         }
+       
     }
 }
 
@@ -290,6 +309,8 @@ body {
         }
     }
 }
+
+
 
 @media screen and (max-width:480px) {
     #app {
@@ -351,9 +372,7 @@ body {
             }
 
             #previous-blogs {
-                height: 60px;
-                width: 60px;
-                font-size: 2rem;
+                
             }
         }
     }
