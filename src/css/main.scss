@@ -19,6 +19,7 @@ body {
     align-items: center;
     justify-content: center;
 
+
     .main {
         height: max-content;
         width: 90%;
@@ -26,6 +27,31 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .loader-container{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba($color: white, $alpha: 0.9);
+            .loader {
+                margin: 50px;
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                border: 10px solid rgba($color: rgb(252, 193, 66), $alpha: 0.2);
+                border-top: 10px solid rgb(252, 193, 66);
+                animation: spin 1s linear infinite;
+                
+            }
+        }
 
         .container {
             width: 80%;
@@ -139,22 +165,14 @@ body {
                 padding: 50px 0px;
                 display: none;
 
-                .loader {
-                    margin: 50px;
-                    height: 200px;
-                    width: 200px;
-                    border-radius: 50%;
-                    border: 10px solid rgba($color: rgb(252, 193, 66), $alpha: 0.2);
-                    border-top: 10px solid rgb(252, 193, 66);
-                    animation: spin 1s linear infinite;
-                    display: none;
-                }
+               
                 .clear-previous{
                     width: 70%;
                     padding: 10px;
                     display: flex;
                     align-items: flex-end;
                     justify-content: flex-end;
+                    // display: none;
                     #clear-prev-blogs{
                         border: none;
                         padding: 20px 40px;
@@ -163,23 +181,34 @@ body {
                         background-color: rgba($color: rgb(252,193,66), $alpha: 0.1);
                         color:rgb(255, 174, 0);
                         cursor: pointer;
+                        outline: none;
                     }
                     #clear-prev-blogs:focus{
                         outline: none;
                     }
                 }
                 .previous-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
                     width: 80%;
                     padding: 10px 10px;
+                    // display: none;
                     .post{
+                        width: 80%;
                         border: 2px solid grey;
                         border-radius: 10px;
                         padding: 30px;
                         margin: 20px;
                         height: max-content;
                         h2{
-                            font-size: 1.7rem;
+                            font-size: 1.2rem;
                             margin: 10px 0px;
+                            color: rgba($color: #000000, $alpha: 0.8);
+                            font-weight: normal;
+                            text-align: justify;
+                            line-height: 150%;
                         }
                         p{
                             color: rgba($color: #000000, $alpha: 0.4);
@@ -191,6 +220,7 @@ body {
         }
 
         #previous-blogs {
+            z-index: 99;
             position: fixed;
             bottom: 0;
             right: 0;
