@@ -37,25 +37,7 @@ db.collection('blogs').get().then((snapshot) => {
 
 //form upload function
 uploadForm.addEventListener('click', () => {
-    let nameData = form.username.value;
-    let blogData = form.blog.value;
-    let timeData = new Date();
-    if (nameData && blogData) {
-        if (nameData.length > 3 && blogData.length > 6) {
-            oldUser = nameData
-            db.collection('blog').add({
-                name: nameData,
-                blog: blogData,
-                time: timeData.toLocaleString()
-            })
-            showLoader(loader)
-        } else {
-            showError('Enter Minimum required values', loaderCircle, loader)
-        }
-    } else {
-        showError('Enter Data to upload blog', loaderCircle, loader)
-    }
-    form.blog.value = ''
+   uploadFormBlogData()
 })
 
 //show previous blog function
@@ -68,6 +50,13 @@ prevBlogs.addEventListener('click', () => {
                 showPrevBlogs(doc, prevContent)
             })
 
+        }).then(()=>{
+            const offset= blogcontainer.offsetTop
+            console.log(offset)
+            scrollTo({
+                top:offset,
+                behavior:"smooth"
+            })
         })
     } else {
         showError("No data found...Enter your blog", loaderCircle, loader)
@@ -88,3 +77,30 @@ clearField.addEventListener('click', () => {
     username.value = ''
     blog.value = ''
 })
+
+form.addEventListener('submit',(e)=>{
+   e.preventDefault();
+    uploadFormBlogData()
+})
+
+let uploadFormBlogData = ()=>{
+    let nameData = form.username.value;
+    let blogData = form.blog.value;
+    let timeData = new Date();
+    if (nameData && blogData) {
+        if (nameData.length > 3 && blogData.length > 6) {
+            oldUser = nameData
+            db.collection('blog').add({
+                name: nameData,
+                blog: blogData,
+                time: timeData.toLocaleString()
+            })
+            showLoader(loader)
+        } else {
+            showError('Enter Minimum required values', loaderCircle, loader)
+        }
+    } else {
+        showError('Enter Data to upload blog', loaderCircle, loader)
+    }
+    form.blog.value = ''
+}
