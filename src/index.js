@@ -61,7 +61,6 @@ uploadForm.addEventListener('click', () => {
 //show previous blog function
 prevBlogs.addEventListener('click', () => {
     removeAllChildNodes(prevContent)
-    l
     if (oldUser) {
         blogcontainer.style.display = 'flex'
         db.collection('blog').where('name', '==', oldUser).get().then((snapshot) => {
